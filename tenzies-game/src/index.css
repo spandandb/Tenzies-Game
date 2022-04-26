@@ -40,6 +40,10 @@ code {
   cursor: pointer;
 }
 
+.selected--die{
+  background-color: #59E391;
+}
+
 /* .die--num{
   font-size: 2rem; */
 /* } */
