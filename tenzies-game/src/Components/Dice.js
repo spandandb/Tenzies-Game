@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Dice() {
+export default function Dice(props) {
   return (
     <div className='component--die'>
-      <h2 className='die--num'>1</h2>
+      <h2 className='die--num'>{props.value}</h2>
     </div>
   );
 }
