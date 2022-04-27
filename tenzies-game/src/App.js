@@ -49,11 +49,16 @@ function App() {
   });
 
   function rollDice() {
-    setDice((prevDie) => {
-      return prevDie.map((die) => {
-        return die.isSelected ? die : generateNewDie();
+    if (tenzies) {
+      setDice(allNewDie());
+      setTenzies(false);
+    } else {
+      setDice((prevDie) => {
+        return prevDie.map((die) => {
+          return die.isSelected ? die : generateNewDie();
+        });
       });
-    });
+    }
   }
 
   function generateNewDie() {
