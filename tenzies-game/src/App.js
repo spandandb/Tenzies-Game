@@ -3,10 +3,12 @@ import React, { useState, useEffect } from 'react';
 import Dice from './Components/Dice';
 import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
+import YouWinPopover from './Components/YouWinPopover';
 
 function App() {
   const [dice, setDice] = useState(allNewDie());
   const [tenzies, setTenzies] = useState(false);
+  const [popover, setPopover] = useState(false);
 
   useEffect(() => {
     const allDieSelected = dice.every((die) => die.isSelected);
@@ -14,6 +16,7 @@ function App() {
     const allDieValuesSame = dice.every((die) => die.value === firstValue);
     if (allDieSelected && allDieValuesSame) {
       setTenzies(true);
+      setPopover(true);
     }
   }, [dice]);
 
@@ -73,11 +76,16 @@ function App() {
     return Math.floor(Math.random() * 6) + 1;
   }
 
+  function closePopover() {
+    setPopover(false);
+  }
+
   return (
     <>
-      {tenzies && <Confetti />}
       <div className='main--container'>
+        {tenzies && <Confetti />}
         <div className='dice--container'>{allDice}</div>
+        {popover && <YouWinPopover close={closePopover} />}
         <div className='btn--container'>
           <button className='roll-btn' onClick={rollDice}>
             {tenzies ? 'New Game' : 'Roll'}

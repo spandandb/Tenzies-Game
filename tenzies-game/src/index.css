@@ -20,7 +20,7 @@ code {
 
 .main--container {
   background-color: #FFFFFF;
-  /* height : 88vh; */
+  height : 95vh;
   border-radius: 6px;
 }
 
@@ -64,4 +64,50 @@ code {
 .btn--container{
   display:flex;
   justify-content: center;
+}
+
+.popover--outer{
+  top : 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+}
+
+.youwin--popover{
+  background: #2B283A;
+  border: 1px solid red;
+  width: 50%;
+  max-width: 400px;
+  color: #59E391;
+  position: relative;
+  padding: 23px;
+}
+
+.youwin--popover--nav{
+  background: #5035FF;
+  display: flex;
+  width: 100%;
+}
+
+.youwin--popover--nav > h2{
+  color: white;
+  margin-right: auto;
+  margin-left: 3px;
+}
+
+.youwin--popover--nav > button{
+  color: yellow;
+  font-size: 25px;
+  margin-right: 3px;
+  background: #5035FF;
+  border: none;
+}
+
+.you--win{
+  font-weight: 700;
+  font-size: 26px
 }
