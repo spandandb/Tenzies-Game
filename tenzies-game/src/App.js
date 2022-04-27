@@ -5,6 +5,16 @@ import { nanoid } from 'nanoid';
 
 function App() {
   const [dice, setDice] = useState(allNewDie());
+  const [tenzies, setTenzies] = useState(false);
+
+  useEffect(() => {
+    const allDieSelected = dice.every((die) => die.isSelected);
+    const firstValue = dice[0].value;
+    const allDieValuesSame = dice.every((die) => die.value === firstValue);
+    if (allDieSelected && allDieValuesSame) {
+      setTenzies(true);
+    }
+  }, [dice]);
 
   function allNewDie() {
     const randomArray = [];
@@ -47,7 +57,7 @@ function App() {
 
   function generateNewDie() {
     return {
-      value: Math.ceil(Math.random() * 6),
+      value: randomDice(),
       isSelected: false,
       id: nanoid()
     };
@@ -62,7 +72,7 @@ function App() {
       <div className='dice--container'>{allDice}</div>
       <div className='btn--container'>
         <button className='roll-btn' onClick={rollDice}>
-          Roll
+          {tenzies ? 'New Game' : 'Roll'}
         </button>
       </div>
     </div>
