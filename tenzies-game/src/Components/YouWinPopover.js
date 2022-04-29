@@ -5,9 +5,8 @@ function YouWinPopover(props) {
     <div className='popover--outer'>
       <div className='youwin--popover'>
         <nav className='youwin--popover--nav'>
-          <h2> 😊 Congratulations !!! </h2>
+          <h2> 😊 Congrats ! </h2>
           <button onClick={props.close}>
-            {' '}
             <b>x</b>
           </button>
         </nav>
