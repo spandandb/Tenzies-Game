@@ -82,14 +82,16 @@ function App() {
 
   return (
     <>
-      <div className='main--container'>
-        {tenzies && <Confetti />}
-        <div className='dice--container'>{allDice}</div>
-        {popover && <YouWinPopover close={closePopover} />}
-        <div className='btn--container'>
-          <button className='roll-btn' onClick={rollDice}>
-            {tenzies ? 'New Game' : 'Roll'}
-          </button>
+      <div className='main--outer'>
+        <div className='main--container'>
+          {tenzies && <Confetti />}
+          <div className='dice--container'>{allDice}</div>
+          {popover && <YouWinPopover close={closePopover} />}
+          <div className='btn--container'>
+            <button className='roll-btn' onClick={rollDice}>
+              {tenzies ? 'New Game' : 'Roll'}
+            </button>
+          </div>
         </div>
       </div>
     </>
