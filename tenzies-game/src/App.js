@@ -9,6 +9,7 @@ function App() {
   const [dice, setDice] = useState(allNewDie());
   const [tenzies, setTenzies] = useState(false);
   const [popover, setPopover] = useState(false);
+  const [rollNo, setRollNo] = useState(1);
 
   useEffect(() => {
     const allDieSelected = dice.every((die) => die.isSelected);
@@ -62,6 +63,8 @@ function App() {
         });
       });
     }
+    setRollNo((prevRollNo) => prevRollNo + 1);
+    console.log(rollNo);
   }
 
   function generateNewDie() {
