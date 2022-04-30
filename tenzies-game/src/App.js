@@ -7,8 +7,8 @@ import YouWinPopover from './Components/YouWinPopover';
 
 function App() {
   const [dice, setDice] = useState(allNewDie());
-  const [popover, setPopover] = useState(true);
-  const [tenzies, setTenzies] = useState(true);
+  const [popover, setPopover] = useState(false);
+  const [tenzies, setTenzies] = useState(false);
   const [rollNo, setRollNo] = useState(1);
 
   useEffect(() => {
@@ -89,7 +89,7 @@ function App() {
         <div className='main--container'>
           {tenzies && <Confetti />}
           <div className='dice--container'>{allDice}</div>
-          {popover && <YouWinPopover close={closePopover} />}
+          {popover && <YouWinPopover close={closePopover} rollCount={rollNo} />}
           <div className='btn--container'>
             <button className='roll-btn' onClick={rollDice}>
               {tenzies ? 'New Game' : 'Roll'}
