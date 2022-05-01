@@ -9,7 +9,7 @@ function App() {
   const [dice, setDice] = useState(allNewDie());
   const [popover, setPopover] = useState(false);
   const [tenzies, setTenzies] = useState(false);
-  const [rollNo, setRollNo] = useState(1);
+  const [rollNo, setRollNo] = useState(0);
 
   useEffect(() => {
     const allDieSelected = dice.every((die) => die.isSelected);
@@ -56,6 +56,7 @@ function App() {
     if (tenzies) {
       setDice(allNewDie());
       setTenzies(false);
+      setRollNo(0);
     } else {
       setDice((prevDie) => {
         return prevDie.map((die) => {

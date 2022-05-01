@@ -14,7 +14,7 @@ function YouWinPopover(props) {
         <p className='roll--count'>
           <i> Number of rolls required to win :</i>
           <span style={{ color: 'yellow', fontWeight: 'bold' }}>
-            {props.rollCount}
+            {' ' + props.rollCount}
           </span>{' '}
         </p>
       </div>
