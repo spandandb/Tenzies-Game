@@ -103,6 +103,7 @@ function App() {
           </div>
         </div>
       </div>
+      <h2 className='made--by'>Created by 🔥...</h2>
     </>
   );
 }

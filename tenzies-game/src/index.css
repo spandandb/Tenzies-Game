@@ -134,11 +134,17 @@ code {
   margin: 0;
   text-align: center;
   padding-bottom: 3vh;
+  font-family: 'Inter', sans-serif;
 }
 
 .instructions {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   margin-top: 0;
+  text-align: center;
+}
+
+.made--by{
+  color: #59E391;
   text-align: center;
 }
