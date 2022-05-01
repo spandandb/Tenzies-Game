@@ -10,6 +10,7 @@ function App() {
   const [popover, setPopover] = useState(false);
   const [tenzies, setTenzies] = useState(false);
   const [rollNo, setRollNo] = useState(0);
+  const [btnView, setBtnView] = useState(false);
 
   useEffect(() => {
     const allDieSelected = dice.every((die) => die.isSelected);
@@ -52,6 +53,14 @@ function App() {
     );
   });
 
+  function mouseOver() {
+    setBtnView(true);
+  }
+
+  function mouseLeave() {
+    setBtnView(false);
+  }
+
   function rollDice() {
     if (tenzies) {
       setDice(allNewDie());
@@ -65,7 +74,6 @@ function App() {
       });
     }
     setRollNo((prevRollNo) => prevRollNo + 1);
-    console.log(rollNo);
   }
 
   function generateNewDie() {
@@ -97,7 +105,12 @@ function App() {
           <div className='dice--container'>{allDice}</div>
           {popover && <YouWinPopover close={closePopover} rollCount={rollNo} />}
           <div className='btn--container'>
-            <button className='roll-btn' onClick={rollDice}>
+            <button
+              className={btnView ? 'roll-btn roll-btn-mouse' : 'roll-btn'}
+              onClick={rollDice}
+              onMouseOver={mouseOver}
+              onMouseLeave={mouseLeave}
+            >
               {tenzies ? 'New Game' : 'Roll'}
             </button>
           </div>
