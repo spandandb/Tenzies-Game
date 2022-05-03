@@ -7,7 +7,7 @@ import YouWinPopover from './Components/YouWinPopover';
 
 function App() {
   const [dice, setDice] = useState(allNewDie());
-  const [popover, setPopover] = useState(false);
+  const [popover, setPopover] = useState(true);
   const [tenzies, setTenzies] = useState(false);
   const [rollNo, setRollNo] = useState(0);
   const [btnView, setBtnView] = useState(false);
