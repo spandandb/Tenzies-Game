@@ -7,7 +7,7 @@ import YouWinPopover from './Components/YouWinPopover';
 
 function App() {
   const [dice, setDice] = useState(allNewDie());
-  const [popover, setPopover] = useState(true);
+  const [popover, setPopover] = useState(false);
   const [tenzies, setTenzies] = useState(false);
   const [rollNo, setRollNo] = useState(0);
   const [btnView, setBtnView] = useState(false);
@@ -116,7 +116,7 @@ function App() {
           </div>
         </div>
       </div>
-      <h2 className='made--by'>Created by 🔥...</h2>
+      <h2 className='made--by'>Created by 🔥 Spandan Das Barman</h2>
     </>
   );
 }
