@@ -53,15 +53,19 @@ function App() {
     );
   });
 
-  function mouseOver() {
-    setBtnView(true);
-  }
+  // function mouseOver() {
+  //   setBtnView(true);
+  // }
 
-  function mouseLeave() {
-    setBtnView(false);
-  }
+  // function mouseLeave() {
+  //   setBtnView(false);
+  // }
 
   function rollDice() {
+    setBtnView(true);
+    setTimeout(() => {
+      setBtnView(false);
+    }, 200);
     if (tenzies) {
       setDice(allNewDie());
       setTenzies(false);
@@ -74,6 +78,7 @@ function App() {
       });
     }
     setRollNo((prevRollNo) => prevRollNo + 1);
+    // setBtnView(false);
   }
 
   function generateNewDie() {
@@ -108,8 +113,6 @@ function App() {
             <button
               className={btnView ? 'roll-btn roll-btn-mouse' : 'roll-btn'}
               onClick={rollDice}
-              onMouseOver={mouseOver}
-              onMouseLeave={mouseLeave}
             >
               {tenzies ? 'New Game' : 'Roll'}
             </button>

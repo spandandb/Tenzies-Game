@@ -75,6 +75,12 @@ code {
   margin-bottom: 15vh ;
 }
 
+.roll-btn :active {
+  color: #5035FF;
+  background-color: whitesmoke ;
+  border: 2px solid #5035FF;
+}
+
 .roll-btn-mouse{
   color: #5035FF;
   background-color: whitesmoke ;
@@ -148,6 +154,7 @@ code {
   font-weight: 400;
   margin-top: 0;
   text-align: center;
+  padding : 0px 7px;
 }
 
 .made--by{
